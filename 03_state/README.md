@@ -1,1 +1,1 @@
-terraform show -h
+terraform state -h
