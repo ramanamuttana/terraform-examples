@@ -1,6 +1,6 @@
 terraform {
     backend "local" {
-    path = "/Users/Desktop/terraform/05_variables/terraform.tfstate"
+    path = "/Users/venkataramanareddy/Documents/GitHub/terraform-examples/05_variables/terraform.tfstate"
   }
   required_providers {
     local = {
@@ -18,11 +18,11 @@ locals {
 
 resource "local_file" "example_1" {
   content  = "demo content"
-  filename = "${path.module}/${var.filename_1}.txt"
+  filename = "${path.module}/output/${var.filename_1}.txt"
 }
 
 resource "local_file" "service_config" {
-  filename = "${local.base_path}/server1.sh"
+  filename = "${local.base_path}/output/server1.sh"
   content  = <<EOT
     environment=${local.environment}
     port=3000
